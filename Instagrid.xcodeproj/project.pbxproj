@@ -73,7 +73,6 @@
 		5A9853B526C409BF004EE2CE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5A9853B326C4065E004EE2CE /* ThirstySoftRegular.otf */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -98,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				5A9853A826C405CC004EE2CE /* LaunchScreen.storyboard */,
+				5A9853B326C4065E004EE2CE /* ThirstySoftRegular.otf */,
 				5A98539A26C405CB004EE2CE /* AppDelegate.swift */,
 				5A98539C26C405CB004EE2CE /* SceneDelegate.swift */,
 				5A9853AB26C405CC004EE2CE /* Info.plist */,
@@ -332,7 +332,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CW8RAWG7Z4;
-				INFOPLIST_FILE = Instagrid/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Instagrid/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -351,7 +351,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CW8RAWG7Z4;
-				INFOPLIST_FILE = Instagrid/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Instagrid/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
