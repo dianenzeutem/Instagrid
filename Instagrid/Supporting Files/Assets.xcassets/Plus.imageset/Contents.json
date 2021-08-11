@@ -1,6 +1,7 @@
 {
-  "colors" : [
+  "images" : [
     {
+      "filename" : "Plus@3x.png",
       "idiom" : "universal"
     }
   ],
