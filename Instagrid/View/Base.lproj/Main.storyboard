@@ -42,18 +42,18 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="YvY-0E-hFd" userLabel="FrameView">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="YvY-0E-hFd" userLabel="FrameView" customClass="FrameView" customModule="Instagrid" customModuleProvider="target">
                                 <rect key="frame" x="57" y="228" width="300" height="300"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Zwf-hv-ZD4" userLabel="Stacktop">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="144"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCS-lq-ZfB">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCS-lq-ZfB" userLabel="Button1">
                                                 <rect key="frame" x="0.0" y="0.0" width="144" height="144"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="Plus"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DMs-YI-Ype">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DMs-YI-Ype" userLabel="Button2">
                                                 <rect key="frame" x="156" y="0.0" width="144" height="144"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="Plus"/>
@@ -63,12 +63,12 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="CIe-SB-Vz9" userLabel="StackBottom">
                                         <rect key="frame" x="0.0" y="156" width="300" height="144"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sbw-R7-xt3">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sbw-R7-xt3" userLabel="Button3">
                                                 <rect key="frame" x="0.0" y="0.0" width="144" height="144"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="Plus"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duh-vN-3ye">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duh-vN-3ye" userLabel="Button4">
                                                 <rect key="frame" x="156" y="0.0" width="144" height="144"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="Plus"/>
@@ -81,6 +81,12 @@
                                     <constraint firstAttribute="width" constant="300" id="Wv4-h0-Mnu"/>
                                     <constraint firstAttribute="height" constant="300" id="hYv-p2-B54"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="button1" destination="lCS-lq-ZfB" id="NSs-mo-T27"/>
+                                    <outlet property="button2" destination="DMs-YI-Ype" id="g2U-13-FdL"/>
+                                    <outlet property="button3" destination="sbw-R7-xt3" id="8nf-JU-Quo"/>
+                                    <outlet property="button4" destination="duh-vN-3ye" id="DBZ-WL-gg2"/>
+                                </connections>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bdZ-jk-D7V" userLabel="LayoutStack">
                                 <rect key="frame" x="57" y="600" width="300" height="80"/>
@@ -89,16 +95,25 @@
                                         <rect key="frame" x="0.0" y="0.0" width="86.5" height="80"/>
                                         <state key="normal" backgroundImage="Layout 1"/>
                                         <state key="selected" image="Selected"/>
+                                        <connections>
+                                            <action selector="setLayout1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cJx-MT-nfW"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blZ-Mx-D4b" userLabel="Layout2">
                                         <rect key="frame" x="106.5" y="0.0" width="87" height="80"/>
                                         <state key="normal" backgroundImage="Layout 2"/>
                                         <state key="selected" image="Selected"/>
+                                        <connections>
+                                            <action selector="setLayout2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Unq-eb-2vJ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgp-h1-YEV" userLabel="Layout3">
                                         <rect key="frame" x="213.5" y="0.0" width="86.5" height="80"/>
                                         <state key="normal" backgroundImage="Layout 3"/>
                                         <state key="selected" image="Selected"/>
+                                        <connections>
+                                            <action selector="setLayout3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mhn-c1-kig"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <variation key="heightClass=compact-widthClass=compact" axis="vertical"/>
@@ -237,6 +252,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="frameview" destination="YvY-0E-hFd" id="fhX-SF-hLv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
