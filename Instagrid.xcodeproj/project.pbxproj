@@ -14,6 +14,8 @@
 		5A9853A526C405CB004EE2CE /* Instagrid.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A9853A326C405CB004EE2CE /* Instagrid.xcdatamodeld */; };
 		5A9853A726C405CC004EE2CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A9853A626C405CC004EE2CE /* Assets.xcassets */; };
 		5A9853AA26C405CC004EE2CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A9853A826C405CC004EE2CE /* LaunchScreen.storyboard */; };
+		5A9853B226C40641004EE2CE /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5A9853B126C40641004EE2CE /* Delm-Medium.otf */; };
+		5A9853B426C4065E004EE2CE /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5A9853B326C4065E004EE2CE /* ThirstySoftRegular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		5A9853A626C405CC004EE2CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A9853A926C405CC004EE2CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A9853AB26C405CC004EE2CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A9853B126C40641004EE2CE /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
+		5A9853B326C4065E004EE2CE /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,8 @@
 				5A9853A026C405CB004EE2CE /* Main.storyboard */,
 				5A9853A626C405CC004EE2CE /* Assets.xcassets */,
 				5A9853A826C405CC004EE2CE /* LaunchScreen.storyboard */,
+				5A9853B126C40641004EE2CE /* Delm-Medium.otf */,
+				5A9853B326C4065E004EE2CE /* ThirstySoftRegular.otf */,
 				5A9853AB26C405CC004EE2CE /* Info.plist */,
 				5A9853A326C405CB004EE2CE /* Instagrid.xcdatamodeld */,
 			);
@@ -129,6 +135,8 @@
 			files = (
 				5A9853AA26C405CC004EE2CE /* LaunchScreen.storyboard in Resources */,
 				5A9853A726C405CC004EE2CE /* Assets.xcassets in Resources */,
+				5A9853B426C4065E004EE2CE /* ThirstySoftRegular.otf in Resources */,
+				5A9853B226C40641004EE2CE /* Delm-Medium.otf in Resources */,
 				5A9853A226C405CB004EE2CE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
