@@ -18,11 +18,13 @@ class FrameView: UIStackView {
         case layout1, layout2, layout3
         
     }
+    
     var style : Style = .layout2 {
         didSet {
             setStyle(style)
         }
     }
+    
     private func setStyle (_ style : Style){
         switch style {
         case .layout1:
