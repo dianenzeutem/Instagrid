@@ -20,6 +20,13 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Merci d'autoriser Instagrid à accéder à vos photos</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>ThirstySoftRegular.otf</string>
+		<string>Delm-Medium.otf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -54,6 +61,7 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -62,12 +70,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>ThirstySoftRegular.otf</string>
-		<string>Delm-Medium.otf</string>
-	</array>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Merci d&apos;autoriser Instagrid à accéder à vos photos</string>
 </dict>
 </plist>
