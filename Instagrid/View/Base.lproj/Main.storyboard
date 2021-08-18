@@ -42,10 +42,10 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAl-1w-t6W" userLabel="Frame">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAl-1w-t6W" userLabel="FrameView" customClass="FrameView" customModule="Instagrid" customModuleProvider="target">
                                 <rect key="frame" x="57" y="298" width="300" height="300"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="YvY-0E-hFd" userLabel="FrameView" customClass="FrameView" customModule="Instagrid" customModuleProvider="target">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="YvY-0E-hFd" userLabel="CollageFrame">
                                         <rect key="frame" x="12" y="12" width="276" height="276"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Zwf-hv-ZD4" userLabel="Stacktop">
@@ -59,7 +59,7 @@
                                                             <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </variation>
                                                         <connections>
-                                                            <action selector="changeImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fw3-Sh-J71"/>
+                                                            <action selector="changeImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qvf-Yb-afT"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DMs-YI-Ype" userLabel="Button2">
@@ -67,7 +67,7 @@
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Plus"/>
                                                         <connections>
-                                                            <action selector="changeImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nhM-gr-r8p"/>
+                                                            <action selector="changeImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yKL-cK-hms"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -80,7 +80,7 @@
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Plus"/>
                                                         <connections>
-                                                            <action selector="changeImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tBe-Lm-8CY"/>
+                                                            <action selector="changeImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Izx-CE-a4p"/>
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duh-vN-3ye" userLabel="Button4">
@@ -88,19 +88,13 @@
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Plus"/>
                                                         <connections>
-                                                            <action selector="changeImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gRX-bs-Lpm"/>
+                                                            <action selector="changeImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e3K-pn-VyX"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.068900875750000007" green="0.39634186030000002" blue="0.59610557559999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <connections>
-                                            <outlet property="button1" destination="lCS-lq-ZfB" id="NSs-mo-T27"/>
-                                            <outlet property="button2" destination="DMs-YI-Ype" id="g2U-13-FdL"/>
-                                            <outlet property="button3" destination="sbw-R7-xt3" id="8nf-JU-Quo"/>
-                                            <outlet property="button4" destination="duh-vN-3ye" id="DBZ-WL-gg2"/>
-                                        </connections>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.068900875750000007" green="0.39634186030000002" blue="0.59610557559999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -112,6 +106,12 @@
                                     <constraint firstAttribute="trailing" secondItem="YvY-0E-hFd" secondAttribute="trailing" constant="12" id="VSj-T0-gGb"/>
                                     <constraint firstAttribute="height" constant="300" id="ZU2-DH-bNe"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="button1" destination="lCS-lq-ZfB" id="1Ea-Nc-eL9"/>
+                                    <outlet property="button2" destination="DMs-YI-Ype" id="2tl-tp-4g8"/>
+                                    <outlet property="button3" destination="sbw-R7-xt3" id="3rY-bM-eY9"/>
+                                    <outlet property="button4" destination="duh-vN-3ye" id="COZ-iS-kdE"/>
+                                </connections>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bdZ-jk-D7V" userLabel="LayoutStack">
                                 <rect key="frame" x="67" y="772" width="280" height="80"/>
@@ -135,7 +135,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <action selector="setLayout1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cJx-MT-nfW"/>
+                                            <action selector="setLayout1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gcf-Lo-tYd"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blZ-Mx-D4b" userLabel="Layout2">
@@ -146,7 +146,7 @@
                                         <state key="normal" backgroundImage="Layout 2"/>
                                         <state key="selected" image="Selected"/>
                                         <connections>
-                                            <action selector="setLayout2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Unq-eb-2vJ"/>
+                                            <action selector="setLayout2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dtT-bc-kod"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgp-h1-YEV" userLabel="Layout3">
@@ -157,7 +157,7 @@
                                         <state key="normal" backgroundImage="Layout 3"/>
                                         <state key="selected" image="Selected"/>
                                         <connections>
-                                            <action selector="setLayout3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mhn-c1-kig"/>
+                                            <action selector="setLayout3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aOt-2r-xAm"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -285,10 +285,10 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="btnLayout1" destination="7cV-9u-IOd" id="a0l-6t-HUm"/>
-                        <outlet property="btnLayout2" destination="blZ-Mx-D4b" id="uv0-DT-0gU"/>
-                        <outlet property="btnLayout3" destination="qgp-h1-YEV" id="PvP-bM-lKn"/>
-                        <outlet property="frameview" destination="YvY-0E-hFd" id="fhX-SF-hLv"/>
+                        <outlet property="btnLayout1" destination="7cV-9u-IOd" id="hts-WI-mSe"/>
+                        <outlet property="btnLayout2" destination="blZ-Mx-D4b" id="n7c-1P-LWR"/>
+                        <outlet property="btnLayout3" destination="qgp-h1-YEV" id="UoP-M5-9bS"/>
+                        <outlet property="frameView" destination="FAl-1w-t6W" id="H3o-G4-ak0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
