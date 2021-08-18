@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fg-UQ-bYF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fg-UQ-bYF">
                                 <rect key="frame" x="148" y="72" width="118.5" height="39"/>
                                 <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -55,6 +55,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="132" height="132"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Plus"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </variation>
                                                         <connections>
                                                             <action selector="changeImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fw3-Sh-J71"/>
                                                         </connections>
@@ -117,10 +120,20 @@
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="GPd-Dl-K6x"/>
-                                            <constraint firstAttribute="height" constant="80" id="Qfr-22-rvm"/>
+                                            <constraint firstAttribute="width" secondItem="7cV-9u-IOd" secondAttribute="height" multiplier="1:1" id="zv3-O1-xq9"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="Layout 1"/>
                                         <state key="selected" image="Selected"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="zv3-O1-xq9"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="zv3-O1-xq9"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <action selector="setLayout1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cJx-MT-nfW"/>
                                         </connections>
@@ -129,7 +142,6 @@
                                         <rect key="frame" x="100" y="0.0" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="IVx-Af-GwU"/>
-                                            <constraint firstAttribute="height" constant="80" id="hBl-Mu-7eM"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="Layout 2"/>
                                         <state key="selected" image="Selected"/>
@@ -140,7 +152,6 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgp-h1-YEV" userLabel="Layout3">
                                         <rect key="frame" x="200" y="0.0" width="80" height="80"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="80" id="UQx-IX-X3d"/>
                                             <constraint firstAttribute="width" constant="80" id="u46-y2-2uf"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="Layout 3"/>
@@ -161,7 +172,7 @@
                                 </variation>
                                 <variation key="heightClass=compact">
                                     <mask key="constraints">
-                                        <include reference="eui-3P-FDE"/>
+                                        <exclude reference="eui-3P-FDE"/>
                                         <exclude reference="oEK-0S-Sk7"/>
                                     </mask>
                                 </variation>
@@ -210,9 +221,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bdZ-jk-D7V" secondAttribute="trailing" constant="10" id="JLG-25-6Hx"/>
                             <constraint firstItem="oCB-X1-G5h" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JgZ-L2-jf6"/>
                             <constraint firstItem="oCB-X1-G5h" firstAttribute="centerX" secondItem="rFV-F0-sQt" secondAttribute="centerX" id="Tpl-I5-bbF"/>
-                            <constraint firstItem="1fg-UQ-bYF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bFF-gk-HOO"/>
                             <constraint firstItem="FAl-1w-t6W" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="c9f-ea-Pqk"/>
                             <constraint firstItem="bdZ-jk-D7V" firstAttribute="top" secondItem="FAl-1w-t6W" secondAttribute="top" id="cUP-zD-SGq"/>
+                            <constraint firstItem="1fg-UQ-bYF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="esp-Ej-iVf"/>
                             <constraint firstItem="oCB-X1-G5h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fmW-UD-CrW"/>
                             <constraint firstItem="oCB-X1-G5h" firstAttribute="top" secondItem="rFV-F0-sQt" secondAttribute="bottom" constant="11.5" id="h7f-zn-g89"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FAl-1w-t6W" secondAttribute="bottom" constant="30" id="hyY-VJ-1Nf"/>
@@ -258,10 +269,13 @@
                                 <exclude reference="Hm0-GY-eXt"/>
                                 <include reference="JLG-25-6Hx"/>
                                 <include reference="hyY-VJ-1Nf"/>
+                                <exclude reference="31I-mL-CKc"/>
+                                <exclude reference="8QT-Tg-Qy5"/>
                                 <exclude reference="c9f-ea-Pqk"/>
                                 <include reference="iaa-a9-2pk"/>
                                 <include reference="jYc-x6-OmN"/>
                                 <exclude reference="kbd-gg-9DW"/>
+                                <exclude reference="8hh-cc-vQs"/>
                                 <exclude reference="Fls-q9-fof"/>
                                 <exclude reference="cUP-zD-SGq"/>
                                 <include reference="ik8-c8-NTC"/>
@@ -279,7 +293,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.75" y="75.362318840579718"/>
+            <point key="canvasLocation" x="17.39130434782609" y="75"/>
         </scene>
     </scenes>
     <resources>

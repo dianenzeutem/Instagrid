@@ -24,11 +24,18 @@ class ViewController: UIViewController {
         let gesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeFunc(gesture:)))
         self.view.addGestureRecognizer(gesture)
         // checking device orientation
-        if UIDevice.current.orientation.isLandscape {
-            gesture.direction = .left
-        } else {
-            gesture.direction = .up
-        }
+        
+//        let size = UIScreen.main.bounds.size
+//        if size.width < size.height {
+//            gesture.direction = .up
+//        } else if size.width > size.height {
+//            gesture.direction = .left
+//        }
+//        if UIDevice.current.orientation.isLandscape {
+//            gesture.direction = .left
+//        } else {
+//            gesture.direction = .up
+//        }
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -38,8 +45,14 @@ class ViewController: UIViewController {
         } else {
             gesture.direction = .up
         }
+//        let size = UIScreen.main.bounds.size
+//        if size.width < size.height {
+//            gesture.direction = .up
+//        } else if size.width > size.height {
+//            gesture.direction = .left
+//        }
     }
-    // change frameView layout
+     // change frameView layout
     @IBAction func setLayout1(_ sender: UIButton) {
         frameview.style = .layout1
         resetSelection(sender)
@@ -67,12 +80,33 @@ class ViewController: UIViewController {
         
         sender.isSelected = true
     }
+    private func animView() {
+        let screenHeight = UIScreen.main.bounds.height
+        let screenWidth = UIScreen.main.bounds.width
+        var translationTransform: CGAffineTransform
+        if UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight {
+            translationTransform = CGAffineTransform(translationX: -screenWidth, y: 0)
+        } else {
+            translationTransform = CGAffineTransform(translationX: 0, y: -screenHeight)
+        }
+        UIView.animate(withDuration: 0.4) { self.frameview.transform = translationTransform }
+    }
+    
+    private func shareImage(){
+        let renderer = UIGraphicsImageRenderer(size: frameview.bounds.size)
+        let screenshot = renderer.image { _ in
+            frameview.drawHierarchy(in: frameview.bounds, afterScreenUpdates: true)
+        }
+        let activityControler = UIActivityViewController(activityItems: [screenshot], applicationActivities: nil)
+        present(activityControler, animated: true, completion: nil)
+    }
     // Openning share view on swipe
     @objc func swipeFunc(gesture: UISwipeGestureRecognizer){
-        let activityControler = UIActivityViewController(activityItems: ["hello"], applicationActivities: nil)
-        present(activityControler, animated: true, completion: nil)
+        animView()
+        shareImage()
         
     }
+    
 }
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
