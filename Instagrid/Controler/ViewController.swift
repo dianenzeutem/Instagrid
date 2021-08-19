@@ -10,6 +10,7 @@ class ViewController: UIViewController {
     private var bntImage : UIButton!
     // Swipe gesture
     private var gesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeFunc(gesture:)))
+    private var isLandscape = false
     // Frame contening the images
     @IBOutlet weak var frameView: FrameView!
     // 3 buttons for layout selection
@@ -45,11 +46,11 @@ class ViewController: UIViewController {
     {
         if UIDevice.current.orientation.isLandscape {
             gesture.direction = .left
-//            frameView.buttonStyle = .landscapeLayout
+            isLandscape = true
             
         } else {
             gesture.direction = .up
-//            frameView.buttonStyle = .portraitLayout
+            isLandscape = false
         }
     }
     
@@ -86,7 +87,7 @@ class ViewController: UIViewController {
         let screenHeight = UIScreen.main.bounds.height
         let screenWidth = UIScreen.main.bounds.width
         var translationTransform: CGAffineTransform
-        if UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight {
+        if isLandscape {
             translationTransform = CGAffineTransform(translationX: -screenWidth, y: 0)
         } else {
             translationTransform = CGAffineTransform(translationX: 0, y: -screenHeight)
