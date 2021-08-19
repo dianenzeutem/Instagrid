@@ -24,6 +24,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewDidLayoutSubviews() {
+        determineMyDeviceOrientation()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         gesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeFunc(gesture:)))
@@ -40,11 +45,11 @@ class ViewController: UIViewController {
     {
         if UIDevice.current.orientation.isLandscape {
             gesture.direction = .left
-            frameView.buttonStyle = .landscapeLayout
+//            frameView.buttonStyle = .landscapeLayout
             
         } else {
             gesture.direction = .up
-            frameView.buttonStyle = .portraitLayout
+//            frameView.buttonStyle = .portraitLayout
         }
     }
     
