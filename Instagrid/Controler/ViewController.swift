@@ -8,11 +8,12 @@ import UIKit
 
 class ViewController: UIViewController {
     private var bntImage : UIButton!
-        // Swipe gesture
-         private var gesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeFunc(gesture:)))
-        // Frame contening the images
+    // Swipe gesture
+    private var gesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeFunc(gesture:)))
+    // Frame contening the images
     @IBOutlet weak var frameView: FrameView!
     // 3 buttons for layout selection
+    
     
     @IBOutlet weak var btnLayout1: UIButton!
     
@@ -24,82 +25,88 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(animated)
+        super.viewWillAppear(animated)
         gesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeFunc(gesture:)))
         self.view.addGestureRecognizer(gesture)
-            determineMyDeviceOrientation()
-        }
-        
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-           
-           determineMyDeviceOrientation()
-       }
+        determineMyDeviceOrientation()
+    }
     
-        func determineMyDeviceOrientation()
-        {
-            if UIDevice.current.orientation.isLandscape {
-                gesture.direction = .left
-            } else {
-                gesture.direction = .up
-            }
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+        determineMyDeviceOrientation()
+    }
+    
+    func determineMyDeviceOrientation()
+    {
+        if UIDevice.current.orientation.isLandscape {
+            gesture.direction = .left
+            frameView.buttonStyle = .landscapeLayout
+            
+        } else {
+            gesture.direction = .up
+            frameView.buttonStyle = .portraitLayout
         }
+    }
     
     // change frameView layout
     @IBAction func setLayout1(_ sender: UIButton) {
         frameView.style = .layout1
-                resetSelection(sender)
-}
+        resetSelection(sender)
+    }
     
     @IBAction func setLayout2(_ sender: UIButton) {
         frameView.style = .layout2
-                resetSelection(sender)
-}
+        resetSelection(sender)
+    }
     
     @IBAction func setLayout3(_ sender: UIButton) {
         frameView.style = .layout3
-                resetSelection(sender)
-}
+        resetSelection(sender)
+    }
     // change image of UIButton
     @IBAction func changeImage(_ sender: UIButton) {
         bntImage = sender
-                openImagePicker()
+        openImagePicker()
     }
     
     // deselect every button except sender
-        private func resetSelection(_ sender : UIButton){
-            btnLayout1.isSelected = false
-            btnLayout2.isSelected = false
-            btnLayout3.isSelected = false
-            
-            sender.isSelected = true
-        }
-        private func animView() {
-            let screenHeight = UIScreen.main.bounds.height
-            let screenWidth = UIScreen.main.bounds.width
-            var translationTransform: CGAffineTransform
-            if UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight {
-                translationTransform = CGAffineTransform(translationX: -screenWidth, y: 0)
-            } else {
-                translationTransform = CGAffineTransform(translationX: 0, y: -screenHeight)
-            }
-            UIView.animate(withDuration: 0.4) { self.frameView.transform = translationTransform }
-        }
+    private func resetSelection(_ sender : UIButton){
+        btnLayout1.isSelected = false
+        btnLayout2.isSelected = false
+        btnLayout3.isSelected = false
         
-        private func shareImage(){
-            let renderer = UIGraphicsImageRenderer(size: frameView.bounds.size)
-            let screenshot = renderer.image { _ in
-                frameView.drawHierarchy(in: frameView.bounds, afterScreenUpdates: true)
-            }
-            let activityControler = UIActivityViewController(activityItems: [screenshot], applicationActivities: nil)
-            present(activityControler, animated: true, completion: nil)
+        sender.isSelected = true
+    }
+    private func animView() {
+        let screenHeight = UIScreen.main.bounds.height
+        let screenWidth = UIScreen.main.bounds.width
+        var translationTransform: CGAffineTransform
+        if UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight {
+            translationTransform = CGAffineTransform(translationX: -screenWidth, y: 0)
+        } else {
+            translationTransform = CGAffineTransform(translationX: 0, y: -screenHeight)
         }
-        // Openning share view on swipe
-        @objc func swipeFunc(gesture: UISwipeGestureRecognizer){
-            animView()
-            shareImage()
-            
+        UIView.animate(withDuration: 0.4) { self.frameView.transform = translationTransform }
+    }
+    
+    private func shareImage(){
+        let renderer = UIGraphicsImageRenderer(size: frameView.bounds.size)
+        let screenshot = renderer.image { _ in
+            frameView.drawHierarchy(in: frameView.bounds, afterScreenUpdates: true)
         }
-
+        let activityController = UIActivityViewController(activityItems: [screenshot], applicationActivities: nil)
+        present(activityController, animated: true)
+        activityController.completionWithItemsHandler = { (_, _, _, _) in
+            UIView.animate(withDuration: 0.2) { self.frameView.transform = .identity }
+        }
+    }
+    // Openning share view on swipe
+    @objc func swipeFunc(gesture: UISwipeGestureRecognizer){
+        animView()
+        shareImage()
+        
+    }
+    
 }
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -119,5 +126,5 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         controler.allowsEditing = true
         self.present(controler, animated: true)
     }
-
+    
 }
