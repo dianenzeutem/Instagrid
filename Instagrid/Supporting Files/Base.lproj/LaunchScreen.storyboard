@@ -15,10 +15,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playstore" translatesAutoresizingMaskIntoConstraints="NO" id="HGC-QN-BlZ">
-                                <rect key="frame" x="47.5" y="363" width="319" height="170"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="HGC-QN-BlZ">
+                                <rect key="frame" x="107" y="348" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="HGC-QN-BlZ" secondAttribute="height" multiplier="15:8" id="aj0-Pt-KHI"/>
+                                    <constraint firstAttribute="height" constant="200" id="0W7-zl-1Wh"/>
+                                    <constraint firstAttribute="width" constant="200" id="7Ha-SZ-XJY"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -36,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="playstore" width="170" height="170"/>
+        <image name="Icon" width="60" height="60"/>
     </resources>
 </document>

@@ -6,7 +6,7 @@
 //
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     private var bntImage : UIButton!
     // Swipe gesture
     private var gesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeFunc(gesture:)))
@@ -14,12 +14,8 @@ class ViewController: UIViewController {
     // Frame contening the images
     @IBOutlet weak var frameView: FrameView!
     // 3 buttons for layout selection
-    
-    
     @IBOutlet weak var btnLayout1: UIButton!
-    
     @IBOutlet weak var btnLayout2: UIButton!
-    
     @IBOutlet weak var btnLayout3: UIButton!
     
     override func viewDidLoad() {
@@ -42,7 +38,7 @@ class ViewController: UIViewController {
         determineMyDeviceOrientation()
     }
     
-    func determineMyDeviceOrientation()
+    private func determineMyDeviceOrientation()
     {
         if UIDevice.current.orientation.isLandscape {
             gesture.direction = .left
@@ -83,6 +79,7 @@ class ViewController: UIViewController {
         
         sender.isSelected = true
     }
+    
     private func animView() {
         let screenHeight = UIScreen.main.bounds.height
         let screenWidth = UIScreen.main.bounds.width
@@ -107,12 +104,10 @@ class ViewController: UIViewController {
         }
     }
     // Openning share view on swipe
-    @objc func swipeFunc(gesture: UISwipeGestureRecognizer){
+    @objc private func swipeFunc(gesture: UISwipeGestureRecognizer){
         animView()
         shareImage()
-        
     }
-    
 }
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -132,5 +127,4 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         controler.allowsEditing = true
         self.present(controler, animated: true)
     }
-    
 }
