@@ -7,25 +7,25 @@
 
 import UIKit
 
-class FrameView: UIView {
+final class FrameView: UIView {
     
-    // Outlet for the buttons
-    @IBOutlet private var button1 : UIButton!
-    @IBOutlet private var button2 : UIButton!
-    @IBOutlet private var button3 : UIButton!
-    @IBOutlet private var button4 : UIButton!
     // Enumeration of the different styles
     enum Style {
         case layout1, layout2, layout3
     }
+    
+    // Outlet for the buttons
+    @IBOutlet private var button2 : UIButton!
+    @IBOutlet private var button4 : UIButton!
     
     var style : Style = .layout2 {
         didSet {
             setStyle(style)
         }
     }
+    
     // Changing frameView layout
-    private func setStyle (_ style : Style){
+    private func setStyle (_ style : Style) {
         switch style {
         case .layout1:
             button2.isHidden = true
@@ -38,4 +38,5 @@ class FrameView: UIView {
             button2.isHidden = false
         }
     }
+    
 }

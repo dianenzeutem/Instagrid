@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -20,11 +20,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Instagrid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fg-UQ-bYF">
-                                <rect key="frame" x="134.5" y="72" width="145" height="39"/>
+                                <rect key="frame" x="375.5" y="0.0" width="145" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="145" id="ejL-Yh-OdO"/>
                                 </constraints>
@@ -46,7 +46,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAl-1w-t6W" userLabel="FrameView" customClass="FrameView" customModule="Instagrid" customModuleProvider="target">
-                                <rect key="frame" x="57" y="298" width="300" height="300"/>
+                                <rect key="frame" x="298" y="83" width="300" height="300"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="YvY-0E-hFd" userLabel="CollageFrame">
                                         <rect key="frame" x="12" y="12" width="276" height="276"/>
@@ -107,14 +107,12 @@
                                     <constraint firstAttribute="height" constant="300" id="ZU2-DH-bNe"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="button1" destination="lCS-lq-ZfB" id="1Ea-Nc-eL9"/>
                                     <outlet property="button2" destination="DMs-YI-Ype" id="2tl-tp-4g8"/>
-                                    <outlet property="button3" destination="sbw-R7-xt3" id="3rY-bM-eY9"/>
                                     <outlet property="button4" destination="duh-vN-3ye" id="COZ-iS-kdE"/>
                                 </connections>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bdZ-jk-D7V" userLabel="LayoutStack">
-                                <rect key="frame" x="67" y="772" width="280" height="80"/>
+                                <rect key="frame" x="762" y="93" width="80" height="280"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cV-9u-IOd" userLabel="Layout1">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -139,7 +137,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blZ-Mx-D4b" userLabel="Layout2">
-                                        <rect key="frame" x="100" y="0.0" width="80" height="80"/>
+                                        <rect key="frame" x="0.0" y="100" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="IVx-Af-GwU"/>
                                         </constraints>
@@ -150,7 +148,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgp-h1-YEV" userLabel="Layout3">
-                                        <rect key="frame" x="200" y="0.0" width="80" height="80"/>
+                                        <rect key="frame" x="0.0" y="200" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="u46-y2-2uf"/>
                                         </constraints>
@@ -181,13 +179,13 @@
                                 <variation key="heightClass=regular-widthClass=regular" axis="vertical"/>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe left to share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCB-X1-G5h">
-                                <rect key="frame" x="44" y="218" width="254" height="30.5"/>
+                                <rect key="frame" x="44" y="218.5" width="254" height="29"/>
                                 <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow Left" translatesAutoresizingMaskIntoConstraints="NO" id="rFV-F0-sQt">
-                                <rect key="frame" x="164.5" y="197.5" width="13" height="9"/>
+                                <rect key="frame" x="164.5" y="198" width="13" height="9"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="9" id="SPp-UG-vDV"/>
                                     <constraint firstAttribute="width" constant="13" id="bT3-oe-1Ty"/>

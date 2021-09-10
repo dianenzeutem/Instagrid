@@ -66,7 +66,7 @@
 			children = (
 				5A9853B526C409BF004EE2CE /* Model */,
 				5A9853B626C409E1004EE2CE /* View */,
-				5A9853B726C409FD004EE2CE /* Controler */,
+				5A9853B726C409FD004EE2CE /* Controller */,
 				5A9853B826C40A0C004EE2CE /* Supporting Files */,
 			);
 			path = Instagrid;
@@ -88,12 +88,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		5A9853B726C409FD004EE2CE /* Controler */ = {
+		5A9853B726C409FD004EE2CE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				5A98539E26C405CB004EE2CE /* ViewController.swift */,
 			);
-			path = Controler;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		5A9853B826C40A0C004EE2CE /* Supporting Files */ = {

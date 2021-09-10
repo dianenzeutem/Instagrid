@@ -10,6 +10,7 @@ final class ViewController: UIViewController {
     private var bntImage : UIButton!
     // Swipe gesture
     private var gesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeFunc(gesture:)))
+    
     private var isLandscape = false
     // Frame contening the images
     @IBOutlet weak var frameView: FrameView!
@@ -34,16 +35,13 @@ final class ViewController: UIViewController {
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        
         determineMyDeviceOrientation()
     }
     
-    private func determineMyDeviceOrientation()
-    {
+    private func determineMyDeviceOrientation() {
         if UIDevice.current.orientation.isLandscape {
             gesture.direction = .left
             isLandscape = true
-            
         } else {
             gesture.direction = .up
             isLandscape = false
@@ -65,6 +63,7 @@ final class ViewController: UIViewController {
         frameView.style = .layout3
         resetSelection(sender)
     }
+    
     // change image of UIButton
     @IBAction func changeImage(_ sender: UIButton) {
         bntImage = sender
@@ -72,11 +71,10 @@ final class ViewController: UIViewController {
     }
     
     // deselect every button except sender
-    private func resetSelection(_ sender : UIButton){
+    private func resetSelection(_ sender : UIButton) {
         btnLayout1.isSelected = false
         btnLayout2.isSelected = false
         btnLayout3.isSelected = false
-        
         sender.isSelected = true
     }
     
@@ -92,7 +90,7 @@ final class ViewController: UIViewController {
         UIView.animate(withDuration: 0.4) { self.frameView.transform = translationTransform }
     }
     
-    private func shareImage(){
+    private func shareImage() {
         let renderer = UIGraphicsImageRenderer(size: frameView.bounds.size)
         let screenshot = renderer.image { _ in
             frameView.drawHierarchy(in: frameView.bounds, afterScreenUpdates: true)
@@ -103,8 +101,9 @@ final class ViewController: UIViewController {
             UIView.animate(withDuration: 0.2) { self.frameView.transform = .identity }
         }
     }
+    
     // Openning share view on swipe
-    @objc private func swipeFunc(gesture: UISwipeGestureRecognizer){
+    @objc private func swipeFunc(gesture: UISwipeGestureRecognizer) {
         animView()
         shareImage()
     }
@@ -120,11 +119,12 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         }
     }
     
-    private func openImagePicker(){
+    private func openImagePicker() {
         let controler = UIImagePickerController()
         controler.sourceType = .photoLibrary
         controler.delegate = self
         controler.allowsEditing = true
         self.present(controler, animated: true)
     }
+    
 }
